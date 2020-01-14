@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity(name = "funciones")
 public class Funciones implements Serializable{
 
@@ -36,6 +38,7 @@ public class Funciones implements Serializable{
 	
 	@Column(name="fecha_actualizacion", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(pattern="dd MMM YYYYY HH:mm:ss")
 	private Date fechaActualizacion;
 
 	public BigDecimal getIdFuncion() {
